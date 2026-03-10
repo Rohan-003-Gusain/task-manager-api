@@ -1,0 +1,333 @@
+:root{
+	--accent:#ff5c5c;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+	font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+	background:url("../images/yoruichi.jpg") center/cover no-repeat fixed;
+	min-height:100vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	align-items:flex-start;
+	padding-top:120px;
+	position:relative;
+}
+
+body::before{
+	content:"";
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.55);
+	z-index:0;
+}
+
+.container{
+	position:relative;
+	z-index:1;
+	background:rgba(255,255,255,0.08);
+	padding:20px;
+	border-radius:16px;
+	width:500px;
+	max-height:500px;
+	border:1px solid rgba(255,255,255,0.25);
+	box-shadow:0 20px 50px rgba(0,0,0,.7);
+	text-align:center;
+	color:white;
+	animation:slideDown .6s ease;
+	transition:opacity .25s ease, transform .25s ease;
+}
+
+@keyframes slideDown{
+	from{opacity:0;transform:translateY(-50px) scale(.95);}
+	to{opacity:1;transform:translateY(0) scale(1);}
+}
+
+h2{
+	margin-bottom:25px;
+	font-weight:600;
+	letter-spacing:.5px;
+}
+
+.input-group{
+	position:relative;
+	margin:15px 0;
+}
+
+/* Icons */
+.input-group i{
+	position:absolute;
+	right:12px;
+	top:50%;
+	transform:translateY(-50%);
+	color:var(--accent);
+	font-size:14px;
+	opacity:.9;
+	pointer-events:none;
+}
+
+/* Inputs */
+.input-group input{
+	width:100%;
+	padding:13px;
+	padding-right:38px;
+	border-radius:10px;
+	border:1px solid rgba(255,255,255,.35);
+	background:rgba(255,255,255,.08);
+	color:#fff;
+	font-size:14px;
+	outline:none;
+	transition:0.3s;
+}
+
+input::placeholder{color:#ddd;}
+
+/* Focus */
+.input-group input:focus{
+	background:rgba(255,255,255,.08);
+	border-color:var(--accent);
+	box-shadow:0 0 10px var(--accent);
+}
+
+/* Buttons */
+button{
+	width:100%;
+	padding:14px;
+	margin-top:18px;
+	border:none;
+	border-radius:12px;
+	background:linear-gradient(135deg,#7a5cff,#5b3bff);
+	color:#fff;
+	font-size:15px;
+	font-weight:600;
+	cursor:pointer;
+	transition:border .2s, box-shadow .2s;
+}
+
+button:hover{
+	background:linear-gradient(135deg,#8d6cff,#6a4bff);
+	transform:translateY(-2px);
+	box-shadow:0 10px 25px rgba(0,0,0,.5);
+}
+
+button:active{
+	transform:scale(.95);
+}
+
+/* Logout button */
+.logout-btn{
+	background:var(--accent);
+	margin-top:15px;
+}
+
+.logout-btn:hover{
+	background:#ff2b2b;
+}
+
+.actions-row{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.actions-row button{
+flex:1;
+padding:12px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+color:white;
+}
+
+.btn-update{
+background:linear-gradient(135deg,#7a5cff,#5b3bff);
+}
+
+.btn-delete{
+background:linear-gradient(135deg,#7a5cff,#5b3bff);
+}
+
+
+.btn-update:hover{
+background:#27ae60;
+}
+
+.btn-delete:hover{
+background:#e74c3c;
+}
+
+/* Links */
+p{
+	margin-top:15px;
+	font-size:14px;
+}
+
+a{
+	color:var(--accent);
+	font-weight:500;
+	text-decoration:none;
+}
+
+a:hover{text-decoration:underline;}
+
+/* 1. Autofill ka background fix (Isme koi change nahi) */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.08) inset !important;
+    -webkit-text-fill-color: #fff !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+    border: 1px solid rgba(255, 255, 255, 0.35) !important;
+}
+
+/* 2. HOVER AUR FOCUS FIX (Ye sabse zaroori hai) */
+/* Humne !important lagaya hai taaki ye autofill ke rule ko override kar sake */
+.input-group input:hover,
+input:-webkit-autofill:hover {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 10px var(--accent) !important;
+}
+
+.input-group input:focus,
+input:-webkit-autofill:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 10px var(--accent) !important;
+}
+
+/* 3. Table Structure: Fixed layout se width control hogi */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+/* 4. Sticky Header: Header ka background aur border */
+table th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-weight: 600;
+    color: #fff;
+    background: #2c2c2c;
+    background-clip: padding-box;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 5. Cells: Padding aur Borders */
+table th,
+table td {
+    padding: 12px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    text-align: left;
+	
+	max-width: 150px;
+    white-space: nowrap;
+	overflow-x:auto;
+	
+}
+
+.table-wrapper { 
+	min-height: 85px;
+	max-height: 200px; 
+	margin-top: 20px; 
+	position: relative; 
+	overflow-y: auto; border: 
+	1px solid rgba(255, 255, 255, 0.2); 
+	border-radius: 15px; 
+	scrollbar-gutter: stable; 
+	scrollbar-width: none; 
+}
+
+table td::-webkit-scrollbar{
+display:none;
+}
+
+/* 6. Cleanup: Right borders hatana */
+table tr th:last-child,
+table tr td:last-child {
+    border-right: none;
+}
+
+/* 7. Hover Effect */
+table tbody tr:hover:not(.selected) td{
+background: rgba(255,255,255,0.05);
+}
+
+table tbody tr.selected td{
+background: rgba(122,92,255,0.35) !important;
+}
+
+table tbody tr{
+cursor:pointer;
+}
+
+table tbody tr:active{
+transform:scale(0.98);
+}
+
+.dropdown{
+position:relative;
+width:100%;
+}
+
+.dropdown-btn{
+padding:12px;
+background:#2c3e50;
+color:white;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+width:100%;
+text-align:center;
+}
+
+.dropdown-list{
+display:none;
+position:absolute;
+width:100%;
+background:#1e1e1e;
+border-radius:10px;
+margin-top:5px;
+overflow:hidden;
+color:white;
+cursor:pointer;
+}
+
+.dropdown-item{
+padding:10px;
+color:white;
+cursor:pointer;
+background:#1e1e1e;
+display:block;
+width:100%;
+}
+
+/* status colors */
+
+.dropdown-btn.pending{
+background:#e74c3c;
+}
+
+.dropdown-btn.progress{
+background:#f39c12;
+}
+
+.dropdown-btn.done{
+background:#2ecc71;
+}
+
+
+/* hover effects */
+.dropdown-item.pending:hover{ background:#e74c3c; }
+.dropdown-item.progress:hover{ background:#f39c12; }
+.dropdown-item.done:hover{ background:#2ecc71; }
+
