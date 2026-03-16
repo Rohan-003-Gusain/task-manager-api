@@ -1,3 +1,5 @@
+let selectedTaskId = null;
+
 window.onload = function () {
 
     if (!checkAccess("USER")) {
@@ -16,7 +18,7 @@ window.onload = function () {
 
         row.classList.add("selected");
 
-        selectedTaskId = row.cells[0].innerText;
+        selectedTaskId = row.cells[0].innerText.trim();
         console.log("Selected ID:", selectedTaskId);
 
     });
@@ -74,6 +76,13 @@ alert("Error loading tasks");
 }
 
 function updateTask(){
+	
+	const tbody = document.getElementById("taskTableBody");
+	
+	if(tbody.rows.length === 0){
+	alert("List is empty, can not update");
+	return;
+	}
 
 if(!selectedTaskId){
 alert("Please select a task first");
@@ -91,7 +100,7 @@ async function deleteTask(){
 	const tbody = document.getElementById("taskTableBody")
 	
 	if(tbody.rows.length === 0){
-	alert("Koi task nahi hai delete karne ke liye");
+	alert("List is empty, can not delete");
 	return;
 	}
 

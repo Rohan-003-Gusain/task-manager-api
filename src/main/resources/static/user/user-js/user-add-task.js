@@ -102,7 +102,7 @@ if(response.ok){
 
 alert("Task created successfully!");
 
-window.location.href="user-view-tasks.html";
+window.location.href="user-dashboard.html";
 
 }else{
 
