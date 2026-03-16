@@ -1,4 +1,4 @@
-const BASE_URL = "https://task-manager-api-production-d685.up.railway.app/api/v1";
+const BASE_URL = "https://task-manager-api-production-72d6.up.railway.app/api/v1";
 const AUTH_URL = `${BASE_URL}/auth`;
 const TASK_URL = `${BASE_URL}/tasks`;
 const ADMIN_URL = `${BASE_URL}/admin`;
