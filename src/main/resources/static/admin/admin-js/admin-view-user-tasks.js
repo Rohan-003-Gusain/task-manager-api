@@ -22,48 +22,36 @@ async function loadUserTasks(userId) {
 
     try {
 
-        /* ✅ STEP-1 → check user exist */
-        const userResponse = await fetch(`${ADMIN_URL}/user/${userId}`, {
-            headers: getAuthHeaders()
-        });
+        const res = await fetch(
+            `${ADMIN_URL}/user/${userId}/tasks`,
+            { headers: getAuthHeaders() }
+        );
 
-        if (userResponse.status === 401 || userResponse.status === 403) {
+        /* auth problem */
+        if (res.status === 401 || res.status === 403) {
             logout();
             return;
         }
 
-        if (userResponse.status === 404) {
+        /* user not exist */
+        if (res.status === 404) {
             alert("User not found");
             goBack();
             return;
         }
 
-        /* ✅ STEP-2 → now check tasks */
-        const taskResponse = await fetch(`${ADMIN_URL}/user/${userId}/tasks`, {
-            headers: getAuthHeaders()
-        });
-
-        if (taskResponse.status === 401 || taskResponse.status === 403) {
-            logout();
-            return;
-        }
-
-        const tasks = await taskResponse.json();
+        const tasks = await res.json();
 
         taskBody.innerHTML = "";
 
-        /* ✅ STEP-3 → tasks empty */
+        /* no tasks */
         if (!tasks || tasks.length === 0) {
-
-            alert("Tasks not found for this user");
-
             taskBody.innerHTML =
-                '<tr><td colspan="4" style="text-align:center;">No tasks for this user</td></tr>';
-
+                '<tr><td colspan="4" style="text-align:center;">No tasks assigned</td></tr>';
             return;
         }
 
-        /* ✅ STEP-4 → show tasks */
+        /* render tasks */
         tasks.forEach(task => {
 
             const row = document.createElement("tr");

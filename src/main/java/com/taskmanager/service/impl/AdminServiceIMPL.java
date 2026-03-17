@@ -49,10 +49,6 @@ public class AdminServiceIMPL implements AdminService {
 		
 		List<Task> tasks = taskRepository.findByUserId(user.getId());
 		
-		if(tasks.isEmpty()){
-		    throw new ResourceNotFoundException("No tasks found for this user");
-		}
-		
 		return tasks.stream()
 		        .map(taskMapper::toDTO)
 		        .toList();
