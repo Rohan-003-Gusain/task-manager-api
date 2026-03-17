@@ -33,9 +33,9 @@ body{
 	min-height:100vh;
 	display:flex;
 	justify-content:center;
-	align-items:flex-start;
+	align-items:center;
 	padding: clamp(8px, 3vw, 20px);
-	padding-top: clamp(180px, 12vh, 250px);
+	padding-top: 0;
 }
 
 body::before{
@@ -335,7 +335,8 @@ table tbody tr:active { transform: scale(0.98); }
 @media (max-width: 768px) {
 	
 	body {
-	       padding-top: 150px;
+	       padding-top: 0;
+		   align-items: center;
 	     }
 	
   .container {
@@ -355,8 +356,8 @@ table tbody tr:active { transform: scale(0.98); }
 @media (max-width: 480px) {
   body {
     padding: 8px;
-    padding-top: 120px;
-    align-items: flex-start;
+    padding-top: 0;
+    align-items: center;
   }
  
   .container {
