@@ -22,51 +22,65 @@ async function loadUserTasks(userId) {
 
     try {
 
-        const response = await fetch(`${ADMIN_URL}/user/${userId}/tasks`, {
+        /* ✅ STEP-1 → check user exist */
+        const userResponse = await fetch(`${ADMIN_URL}/user/${userId}`, {
             headers: getAuthHeaders()
         });
 
-        if (response.status === 401 || response.status === 403) {
+        if (userResponse.status === 401 || userResponse.status === 403) {
             logout();
             return;
         }
 
-        if (response.status === 404) {
-            alert("No user found with this ID");
+        if (userResponse.status === 404) {
+            alert("User not found");
+            goBack();
             return;
         }
 
-        const tasks = await response.json();
+        /* ✅ STEP-2 → now check tasks */
+        const taskResponse = await fetch(`${ADMIN_URL}/user/${userId}/tasks`, {
+            headers: getAuthHeaders()
+        });
+
+        if (taskResponse.status === 401 || taskResponse.status === 403) {
+            logout();
+            return;
+        }
+
+        const tasks = await taskResponse.json();
 
         taskBody.innerHTML = "";
 
-        if (tasks.length === 0) {
+        /* ✅ STEP-3 → tasks empty */
+        if (!tasks || tasks.length === 0) {
+
+            alert("Tasks not found for this user");
 
             taskBody.innerHTML =
-            '<tr><td colspan="4" style="text-align:center;">No tasks for this user</td></tr>';
+                '<tr><td colspan="4" style="text-align:center;">No tasks for this user</td></tr>';
 
             return;
         }
 
+        /* ✅ STEP-4 → show tasks */
         tasks.forEach(task => {
 
             const row = document.createElement("tr");
 
-            row.innerHTML =
-            `<td>${task.taskId}</td>
-             <td>${task.title}</td>
-             <td>${task.description}</td>
-             <td>${task.status}</td>`;
+            row.innerHTML = `
+                <td>${task.taskId}</td>
+                <td>${task.title}</td>
+                <td>${task.description}</td>
+                <td>${task.status}</td>
+            `;
 
             taskBody.appendChild(row);
-
         });
 
     } catch (err) {
-
         console.error(err);
-        alert("Error loading tasks");
-
+        alert("Error loading data");
     }
 }
 
