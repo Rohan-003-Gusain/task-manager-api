@@ -1,7 +1,7 @@
 const API_BASE = 'https://task-manager-api-production-51f1.up.railway.app/api/v1'
-const AUTH_URL = `${API_URL}/auth`;
-const TASK_URL = `${API_URL}/tasks`;
-const ADMIN_URL = `${API_URL}/admin`;
+const AUTH_URL = `${API_BASE}/auth`;
+const TASK_URL = `${API_BASE}/tasks`;
+const ADMIN_URL = `${API_BASE}/admin`;
 
 function getToken() {
     return localStorage.getItem("token");
