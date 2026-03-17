@@ -161,8 +161,8 @@ button{
 	min-height: clamp(44px, 10vh, 50px);
 	font-weight:600;
 	cursor:pointer;
-	transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-	min-height: 44px;
+	transition: background 0.2s;
+	transform 0.15s, box-shadow 0.2s;
 	-webkit-tap-highlight-color: transparent;
 }
 
@@ -368,7 +368,8 @@ table tbody tr:active { transform: scale(0.98); }
 	.container {
 		width: 80vw !important;
 		padding: 24px !important;
-		max-height: 88vh !important;
+		height: auto !important;
+		max-height: 90vh !important;
 	}
 	
 	h2 {
