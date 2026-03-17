@@ -328,8 +328,9 @@ table tbody tr:active { transform: scale(0.98); }
 /* PHONE - Mobile devices (max 768px) */
 @media (max-width: 768px) {
 	.container {
-		width: 90vw !important;
+		width: 80vw !important;
 		padding: 20px !important;
+		max-height: 85vh !important;
 	}
 	
 	h2 {
@@ -365,8 +366,9 @@ table tbody tr:active { transform: scale(0.98); }
 /* TABLET - Medium devices (769px to 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
 	.container {
-		width: 85vw !important;
+		width: 80vw !important;
 		padding: 24px !important;
+		max-height: 88vh !important;
 	}
 	
 	h2 {
