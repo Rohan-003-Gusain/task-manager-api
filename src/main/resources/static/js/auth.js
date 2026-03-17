@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/api/v1";
+const API_BASE = 'https://task-manager-api-production-51f1.up.railway.app/api/v1'
 const AUTH_URL = `${BASE_URL}/auth`;
 const TASK_URL = `${BASE_URL}/tasks`;
 const ADMIN_URL = `${BASE_URL}/admin`;
