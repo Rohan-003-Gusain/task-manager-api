@@ -24,7 +24,8 @@
 html,
 body {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body{
@@ -327,10 +328,16 @@ table tbody tr:active { transform: scale(0.98); }
 
 /* PHONE - Mobile devices (max 768px) */
 @media (max-width: 768px) {
+	body{
+	    align-items:center;
+	    padding:20px 0;
+	}
+	
 	.container {
 		width: 80vw !important;
 		padding: 20px !important;
-		max-height: 85vh !important;
+		max-height: 90vh !important;
+		backdrop-filter: blur(12px);
 	}
 	
 	h2 {
@@ -370,6 +377,7 @@ table tbody tr:active { transform: scale(0.98); }
 		padding: 24px !important;
 		height: auto !important;
 		max-height: 90vh !important;
+		backdrop-filter: blur(12px);
 	}
 	
 	h2 {
