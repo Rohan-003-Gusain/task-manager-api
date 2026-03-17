@@ -50,7 +50,7 @@ body::before{
   	position: relative;
   	z-index: 1;
   
-  	width: clamp(280px, 95vw, 500px);
+  	width: clamp(320px, 90vw, 700px);
   
   	max-height: calc(100dvh - clamp(100px, 10vh, 150px));
   	overflow-y: auto;
@@ -61,7 +61,7 @@ body::before{
   	border: 1px solid rgba(255, 255, 255, 0.25);
   	border-radius: 16px;
 	
-	padding: clamp(14px, 4vw, 30px);
+	padding: clamp(18px, 5vw, 32px);
 	
 	background: var(--glass-bg);
 	border: 1px solid var(--glass-border);
@@ -83,12 +83,12 @@ h2{
 	margin-bottom:clamp(16px, 3vw, 28px);
 	font-weight:600;
 	letter-spacing: 0.5px;
-	font-size: clamp(1.1rem, 3vw, 1.8rem);
+	font-size: clamp(1.3rem, 5vw, 2rem);
 }
 
 p{
 	margin-top:15px;
-	font-size:clamp(12px, 2.5vw, 14px);
+	font-size: clamp(13px, 2vw, 15px);
 }
 
 a{
@@ -117,6 +117,7 @@ a:hover{ text-decoration: underline; }
 
 .input-group input{
 	width:100%;
+	font-size: clamp(14px, 2vw, 16px);
 	padding: clamp(10px, 2vh, 13px) 38px clamp(10px, 2vh, 13px) 13px;
 	border-radius:10px;
 	border:1px solid var(--input-border);
@@ -156,7 +157,8 @@ button{
 	border-radius:12px;
 	background:var(--btn-primary);
 	color:#fff;
-	font-size:clamp(13px, 2.5vw, 15px);
+	font-size: clamp(14px, 2vw, 16px);
+	min-height: clamp(44px, 10vh, 50px);
 	font-weight:600;
 	cursor:pointer;
 	transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
@@ -323,58 +325,3 @@ table tbody tr:active { transform: scale(0.98); }
 .dropdown-item.progress:hover { background: #f39c12; }
 .dropdown-item.done:hover { background: #2ecc71; }
 
-/* TABLET - iPad/Medium devices (600px to 1024px) */
-@media (max-width: 1024px) and (min-width: 601px) {
-	.container {
-		width: 85vw !important;
-		padding: 26px !important;
-	}
-	
-	h2 {
-		font-size: 1.5rem !important;
-	}
-	
-	button, .dropdown-btn {
-		min-height: 48px !important;
-		font-size: 15px !important;
-		padding: 13px !important;
-	}
-	
-	.input-group input {
-		padding: 13px 38px 13px 13px !important;
-		font-size: 15px !important;
-		min-height: 48px !important;
-	}
-	
-	p {
-		font-size: 14px !important;
-	}
-}
-
-/* MOBILE - Small phones (max 600px) */
-@media (max-width: 600px) {
-	.container {
-		width: 90vw !important;
-		padding: 24px !important;
-	}
-	
-	h2 {
-		font-size: 1.4rem !important;
-	}
-	
-	button, .dropdown-btn {
-		min-height: 50px !important;
-		font-size: 16px !important;
-		padding: 14px !important;
-	}
-	
-	.input-group input {
-		padding: 14px 38px 14px 13px !important;
-		font-size: 16px !important;
-		min-height: 50px !important;
-	}
-	
-	p {
-		font-size: 13px !important;
-	}
-}
