@@ -61,7 +61,7 @@ body::before{
   	border: 1px solid rgba(255, 255, 255, 0.25);
   	border-radius: 16px;
 	
-	padding: clamp(14px, 4vw, 28px);
+	padding: clamp(14px, 4vw, 30px);
 	
 	background: var(--glass-bg);
 	border: 1px solid var(--glass-border);
@@ -323,47 +323,3 @@ table tbody tr:active { transform: scale(0.98); }
 .dropdown-item.progress:hover { background: #f39c12; }
 .dropdown-item.done:hover { background: #2ecc71; }
 
-/* ==================== RESPONSIVE ==================== */
-@media (min-width: 1200px) {
-  .container {
-    width: min(500px, 70vw);
-    padding: 30px;
-	max-height: calc(100dvh - 80px);
-  }
-}
- 
-/* Tablets */
-@media (max-width: 768px) {
-	
-	body {
-	       padding-top: 0;
-		   align-items: center;
-	     }
-	
-  .container {
-    width: min(94vw, 440px);
-  }
- 
-  .actions-row {
-    flex-direction: column;
-  }
- 
-  .actions-row button {
-    flex: 1 1 auto;
-  }
-}
- 
-/* Small mobiles */
-@media (max-width: 480px) {
-  body {
-    padding: 8px;
-    padding-top: 0;
-    align-items: center;
-  }
- 
-  .container {
-    width: 100%;
-    border-radius: 12px;
-    max-height: calc(100dvh - 60px);
-  }
-}
