@@ -24,8 +24,7 @@
 html,
 body {
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 body{
@@ -336,8 +335,7 @@ table tbody tr:active { transform: scale(0.98); }
 	.container {
 		width: 80vw !important;
 		padding: 20px !important;
-		max-height: 90vh !important;
-		backdrop-filter: blur(12px);
+		max-height: 90dvh !important;
 	}
 	
 	h2 {
@@ -376,7 +374,7 @@ table tbody tr:active { transform: scale(0.98); }
 		width: 80vw !important;
 		padding: 24px !important;
 		height: auto !important;
-		max-height: 90vh !important;
+		max-height: 90dvh !important;
 	}
 	
 	h2 {
