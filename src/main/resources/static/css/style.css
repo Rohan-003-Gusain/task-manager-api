@@ -52,7 +52,7 @@ body::before{
   
   	width: clamp(280px, 95vw, 500px);
   
-  	max-height: calc(100dvh - clamp(220px, 15vh, 300px));
+  	max-height: calc(100dvh - clamp(100px, 10vh, 150px));
   	overflow-y: auto;
 	overflow-x:clip;
 	scrollbar-width:none;
@@ -326,8 +326,9 @@ table tbody tr:active { transform: scale(0.98); }
 /* ==================== RESPONSIVE ==================== */
 @media (min-width: 1200px) {
   .container {
-    width: min(680px, 65vw);
+    width: min(500px, 70vw);
     padding: 30px;
+	max-height: calc(100dvh - 80px);
   }
 }
  
