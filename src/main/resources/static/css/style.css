@@ -377,7 +377,6 @@ table tbody tr:active { transform: scale(0.98); }
 		padding: 24px !important;
 		height: auto !important;
 		max-height: 90vh !important;
-		backdrop-filter: blur(12px);
 	}
 	
 	h2 {
