@@ -325,3 +325,72 @@ table tbody tr:active { transform: scale(0.98); }
 .dropdown-item.progress:hover { background: #f39c12; }
 .dropdown-item.done:hover { background: #2ecc71; }
 
+/* PHONE - Mobile devices (max 768px) */
+@media (max-width: 768px) {
+	.container {
+		width: 90vw !important;
+		padding: 20px !important;
+	}
+	
+	h2 {
+		font-size: 1.4rem !important;
+	}
+	
+	p {
+		font-size: 14px !important;
+	}
+	
+	button, .dropdown-btn {
+		min-height: 50px !important;
+		font-size: 16px !important;
+		padding: 14px !important;
+	}
+	
+	.input-group input {
+		padding: 14px 38px 14px 13px !important;
+		font-size: 16px !important;
+		min-height: 50px !important;
+	}
+	
+	.actions-row {
+		gap: 12px !important;
+	}
+	
+	.dropdown-item {
+		min-height: 50px !important;
+		font-size: 16px !important;
+	}
+}
+
+/* TABLET - Medium devices (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+	.container {
+		width: 85vw !important;
+		padding: 24px !important;
+	}
+	
+	h2 {
+		font-size: 1.5rem !important;
+	}
+	
+	p {
+		font-size: 14px !important;
+	}
+	
+	button, .dropdown-btn {
+		min-height: 48px !important;
+		font-size: 15px !important;
+		padding: 13px !important;
+	}
+	
+	.input-group input {
+		padding: 13px 38px 13px 13px !important;
+		font-size: 15px !important;
+		min-height: 48px !important;
+	}
+	
+	.dropdown-item {
+		min-height: 48px !important;
+		font-size: 15px !important;
+	}
+}
