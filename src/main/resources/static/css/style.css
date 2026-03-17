@@ -323,3 +323,20 @@ table tbody tr:active { transform: scale(0.98); }
 .dropdown-item.progress:hover { background: #f39c12; }
 .dropdown-item.done:hover { background: #2ecc71; }
 
+@media (max-width: 768px){
+
+  .container{
+    width: 520px;  
+    max-width: 92vw;  
+  }
+
+}
+
+@media (max-width: 480px){
+
+  .container{
+    width: 92vw;       
+    max-width: 420px;  
+  }
+
+}
