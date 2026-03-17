@@ -35,7 +35,7 @@ body{
 	justify-content:center;
 	align-items:flex-start;
 	padding: clamp(8px, 3vw, 20px);
-	padding-top: clamp(60px, 8vh, 90px);
+	padding-top: clamp(180px, 12vh, 250px);
 }
 
 body::before{
@@ -52,7 +52,7 @@ body::before{
   
   	width: clamp(280px, 95vw, 500px);
   
-  	max-height: calc(100dvh - clamp(80px, 12vh, 120px));
+  	max-height: calc(100dvh - clamp(220px, 15vh, 300px));
   	overflow-y: auto;
 	overflow-x:clip;
 	scrollbar-width:none;
@@ -333,6 +333,11 @@ table tbody tr:active { transform: scale(0.98); }
  
 /* Tablets */
 @media (max-width: 768px) {
+	
+	body {
+	       padding-top: 150px;
+	     }
+	
   .container {
     width: min(94vw, 440px);
   }
@@ -350,7 +355,7 @@ table tbody tr:active { transform: scale(0.98); }
 @media (max-width: 480px) {
   body {
     padding: 8px;
-    padding-top: 50px;
+    padding-top: 120px;
     align-items: flex-start;
   }
  
