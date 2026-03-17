@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 import com.taskmanager.dto.TaskDTO;
+import com.taskmanager.dto.TaskRequestDTO;
 import com.taskmanager.exception.ResourceNotFoundException;
 import com.taskmanager.mapper.TaskMapper;
 import com.taskmanager.model.Task;
@@ -26,7 +27,7 @@ public class TaskServiceIMPL implements TaskService{
 	private final TaskMapper taskMapper;
 
 	@Override
-	public TaskDTO createTask(TaskDTO dto, String username) {
+	public TaskDTO createTask(TaskRequestDTO  dto, String username) {
 
 		User user = userRepository.findByUsername(username)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found"));
@@ -34,9 +35,9 @@ public class TaskServiceIMPL implements TaskService{
         Task task = taskMapper.toEntity(dto);
         task.setUser(user);
 
-        taskRepository.save(task);
+        Task saved = taskRepository.save(task);
 
-        return taskMapper.toDTO(task);
+        return taskMapper.toDTO(saved);
 	}
 
 	@Override
@@ -49,7 +50,7 @@ public class TaskServiceIMPL implements TaskService{
 	}
 
 	@Override
-	public TaskDTO updateTask(Long id, TaskDTO dto) {
+	public TaskDTO updateTask(Long id, TaskRequestDTO  dto) {
 		
 		Task task = taskRepository.findById(id)
 	            .orElseThrow(() -> new ResourceNotFoundException("Task not found"));

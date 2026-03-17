@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.taskmanager.dto.TaskRequestDTO;
 import com.taskmanager.dto.TaskDTO;
 import com.taskmanager.servie.TaskService;
 
@@ -42,7 +43,7 @@ public class TaskController {
 	}
 	
 	@PostMapping
-	public TaskDTO createTaskById(@RequestBody TaskDTO dto, Authentication auth) {
+	public TaskDTO createTaskById(@RequestBody TaskRequestDTO dto, Authentication auth) {
 		
 		String username = auth.getName();
 
@@ -50,7 +51,7 @@ public class TaskController {
 	}
 	
 	@PutMapping("{id}")
-	public TaskDTO updateTask(@PathVariable Long id, @RequestBody TaskDTO dto) {
+	public TaskDTO updateTask(@PathVariable Long id, @RequestBody TaskRequestDTO dto) {
 		
 		return taskService.updateTask(id, dto);
 	}
