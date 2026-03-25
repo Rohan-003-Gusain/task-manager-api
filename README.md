@@ -2,6 +2,16 @@
 
 ---
 
+## 🌍 Live Application
+
+Web UI:
+[Open Task Manager Web App](https://render-backend-service.onrender.com)
+
+Swagger UI:
+[Open Swagger UI](https://render-backend-service.onrender.com/swagger-ui/index.html)
+
+---
+
 ## 🎯 Objective
 
 The **Task Manager System** is a full stack web application developed using **Spring Boot REST APIs** and a **JavaScript-based frontend**.
@@ -17,7 +27,7 @@ Administrators can monitor users and their tasks.
 * **Backend:** Spring Boot
 * **Frontend:** HTML, CSS, JavaScript
 * **Security:** Spring Security with JWT Authentication (JWT Filter)
-* **Database:** MySQL
+* **Database:** PostgreSQL
 * **ORM:** Spring Data JPA / Hibernate
 * **Build Tool:** Maven
 * **API Testing:** Postman
@@ -68,6 +78,8 @@ Administrators can monitor users and their tasks.
 
 # 📡 Backend API Endpoints
 
+* **Base URL:** https://render-backend-service.onrender.com
+
 ## Authentication APIs
 
 * **POST** `/api/v1/auth/register` – Register new user
@@ -110,7 +122,7 @@ taskId | title | description | status | userId
 Make sure the following software is installed:
 
 * Java JDK 17+
-* MySQL Server
+* PostgreSQL Server
 * Maven
 * IntelliJ IDEA / Eclipse IDE
 * Web Browser
@@ -139,7 +151,7 @@ git clone https://github.com/your-username/task-manager-system.git
 
 ---
 
-## 🗄 Step 3: Setup MySQL Database
+## 🗄 Step 3: Setup PostgreSQL Database
 
 ```sql id="j63cyr"
 CREATE DATABASE task_manager;
@@ -179,7 +191,7 @@ TaskManagerApplication.java
 Backend runs at:
 
 ```
-http://localhost:8080
+https://render-backend-service.onrender.com
 ```
 
 ---
@@ -189,7 +201,7 @@ http://localhost:8080
 Open in browser:
 
 ```
-http://localhost:8080/login.html
+https://render-backend-service.onrender.com/login.html
 ```
 
 ---
