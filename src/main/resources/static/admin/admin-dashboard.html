@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+<div class="container">
+
+<h2>
+<i class="fa fa-user-shield"></i> Admin Dashboard
+</h2>
+
+<div class="admin-actions">
+
+<button onclick="openUsers()">
+<i class="fa fa-users"></i> All Users
+</button>
+
+</div>
+
+<div class="search-section">
+
+<h3>Search User Tasks</h3>
+
+<div class="input-group">
+<i class="fa fa-id-badge"></i>
+<input id="userIdInput" type="number" placeholder="Enter User ID">
+</div>
+
+<button onclick="goToViewTasks()">
+<i class="fa fa-search"></i> Fetch Tasks
+</button>
+
+</div>
+
+<div class="admin-actions">
+
+<button onclick="logout()" class="logout-btn">
+<i class="fa fa-sign-out-alt"></i> Logout
+</button>
+
+</div>
+
+</div>
+
+<script src="../js/auth.js"></script>
+<script src="admin-js/admin-dashboard.js"></script>
+
+</body>
+</html>

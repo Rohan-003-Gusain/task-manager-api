@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Tasks List</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="stylesheet" href="../css/style.css">
+
+</head>
+<body>
+
+<div class="bg"></div>
+<div class="container">
+
+<h1>Tasks List</h1>
+
+<div id="noTasksMessage" style="display:none; text-align:center; margin-bottom:10px;">
+<i class="fa fa-inbox"></i> No tasks found
+</div>
+
+
+<div class="table-wrapper">
+
+<table>
+
+<thead>
+<tr>
+<th>Task ID</th>
+<th>Title</th>
+<th>Description</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody id="taskTableBody">
+    
+    </tbody>
+
+</table>
+
+</div>
+
+<div class="actions-row">
+<button class="btn-update" onclick="updateTask()">Update</button>
+<button class="btn-delete" onclick="deleteTask()">Delete</button>
+</div>
+
+<button class="back-btn" onclick="goBack()">Back</button>
+
+</div>
+
+<script src="../js/auth.js"></script>
+<script src="user-js/user-view-tasks.js"></script>
+
+</body>
+</html>
