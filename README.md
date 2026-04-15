@@ -285,3 +285,6 @@ After starting the application:
 
 ### Register Page
 ![Register](UserInterfaces/register.png)
+
+---
+
