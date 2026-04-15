@@ -63,7 +63,8 @@ public class SpringSecurity {
             		.requestMatchers(
             		        "/v3/api-docs/**",
             		        "/swagger-ui/**",
-            		        "/swagger-ui.html"
+            		        "/swagger-ui.html",
+            		        "/ping"
             		).permitAll()
             		
             		// Frontend files allow
