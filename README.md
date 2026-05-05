@@ -5,10 +5,10 @@
 ## 🌍 Live Application
 
 Web UI:
-[Open Task Manager Web App](https://render-backend-service.onrender.com)
+[Open Task Manager Web App](https://task-manager-api-backend-service.onrender.com)
 
 Swagger UI:
-[Open Swagger UI](https://render-backend-service.onrender.com/swagger-ui/index.html)
+[Open Swagger UI](https://task-manager-api-backend-service.onrender.com/swagger-ui/index.html)
 
 ---
 
